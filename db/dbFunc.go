@@ -3,8 +3,8 @@ package db
 import (
 	"database/sql"
 	"errors"
-	_ "github.com/go-sql-driver/mysql"
 	log "github.com/cihub/seelog"
+	_ "github.com/go-sql-driver/mysql"
 	"strconv"
 )
 

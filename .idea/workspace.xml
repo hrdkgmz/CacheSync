@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69a9096f-14bc-4e28-b561-d2f1c63e4cb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/hrdkgmz.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cache/redisFunc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cache/redisPool.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/dbFunc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/dbPool.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global/specialCase.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global/tbInfo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/dulpMain.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task/canalTask.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task/dulplicateTask.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/canal/canalClient.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/redisPool.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redisPool.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/dbFunc.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/dbFunc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/dbPool.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/dbPool.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/canalTask.go" beforeDir="false" afterPath="$PROJECT_DIR$/task/canalTask.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/dulplicateTask.go" beforeDir="false" afterPath="$PROJECT_DIR$/task/dulplicateTask.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

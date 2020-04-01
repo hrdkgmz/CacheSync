@@ -3,7 +3,6 @@ package task
 import (
 	"fmt"
 	log "github.com/cihub/seelog"
-	"github.com/gomodule/redigo/redis"
 	"github.com/hrdkgmz/cacheSync/cache"
 	"github.com/hrdkgmz/cacheSync/db"
 	"github.com/hrdkgmz/cacheSync/global"
@@ -62,10 +61,9 @@ func cacheTable(tb string, list []map[string]interface{}, key string) error {
 				}
 				key = tb + ":" + s + ":" + str
 			}
-			if _, err := cache.GetInstance().Do("HMSET", redis.Args{}.Add(key).AddFlat(val)...); err != nil {
-				if err != nil {
-					return err
-				}
+			_, err := cache.GetInstance().SetHashMap(key, val)
+			if err != nil {
+				return err
 			}
 		}
 		err := specialCase(tb, val)

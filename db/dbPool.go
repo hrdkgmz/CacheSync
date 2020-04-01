@@ -25,10 +25,10 @@ func GetInstance() *DbPool {
 	return DbMan
 }
 
-var _host string = "192.168.208.12:3306"
+var _host string = "192.168.110.153:3306"
 var _database string = "bctest"
 var _username string = "root"
-var _password string = "root"
+var _password string = "Gmz_891019_ws"
 var _charset string = "utf8"
 var _maxOpens int = 2000
 var _maxIdels int = 1000

@@ -25,7 +25,7 @@ func GetInstance() *RedisPool {
 	return RdsMan
 }
 
-var _host string = "192.168.208.12:6379"
+var _host string = "192.168.110.153:6379"
 var _pass string = ""
 var _db int = 0
 var _maxOpens int = 10032
