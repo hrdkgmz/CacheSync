@@ -1,16 +1,14 @@
 package task
 
 import (
-	"fmt"
-	canal_protocol "github.com/CanalClient/canal-go/protocol"
+	cProtocol "github.com/CanalClient/canal-go/protocol"
 	log "github.com/cihub/seelog"
 	"github.com/hrdkgmz/cacheSync/cache"
 	"github.com/hrdkgmz/cacheSync/global"
 	"github.com/hrdkgmz/cacheSync/util"
-	"strings"
 )
 
-func NewDeleteTask(row *canal_protocol.RowData, header *canal_protocol.Header) func() error {
+func NewDeleteTask(row *cProtocol.RowData, header *cProtocol.Header) func() error {
 	return func() error {
 		tb := header.GetTableName()
 		tbInfo := global.GetSyncInfos()[tb]
