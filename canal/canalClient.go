@@ -72,35 +72,35 @@ func handleMsg(entrys []protocol.Entry) {
 		rowChange := new(protocol.RowChange)
 
 		err := proto.Unmarshal(entry.GetStoreValue(), rowChange)
-		if err!=nil{
+		if err != nil {
 			return
 		}
 		if rowChange != nil {
 			header := entry.GetHeader()
-			handleRows(rowChange,header)
+			handleRows(rowChange, header)
 		}
 	}
 }
 
-func handleRows(rowChange *protocol.RowChange, header *protocol.Header){
+func handleRows(rowChange *protocol.RowChange, header *protocol.Header) {
 	eventType := rowChange.GetEventType()
 	fmt.Println(fmt.Sprintf("================> binlog[%s : %d],name[%s,%s], eventType: %s", header.GetLogfileName(), header.GetLogfileOffset(), header.GetSchemaName(), header.GetTableName(), header.GetEventType()))
-	taskHandler:= taskHandle.GetInstance()
+	taskHandler := taskHandle.GetInstance()
 	for _, rowData := range rowChange.GetRowDatas() {
 		if eventType == protocol.EventType_DELETE {
 			printColumn(rowData.GetBeforeColumns())
-			taskHandler.Do(task.NewDeleteTask(rowData))
+			taskHandler.Do(task.NewDeleteTask(rowData, header))
 		} else if eventType == protocol.EventType_INSERT {
 			printColumn(rowData.GetAfterColumns())
-			taskHandler.Do(task.NewInsertTask(rowData))
-		} else if eventType==protocol.EventType_UPDATE {
+			taskHandler.Do(task.NewInsertTask(rowData, header))
+		} else if eventType == protocol.EventType_UPDATE {
 			fmt.Println("-------> before")
 			printColumn(rowData.GetBeforeColumns())
 			fmt.Println("-------> after")
 			printColumn(rowData.GetAfterColumns())
-			taskHandler.Do(task.NewUpdateTask(rowData))
-		}else{
-			log.Println("不支持的事件类型："+strconv.Itoa((int(eventType))))
+			taskHandler.Do(task.NewUpdateTask(rowData, header))
+		} else {
+			log.Println("不支持的事件类型：" + strconv.Itoa((int(eventType))))
 		}
 	}
 

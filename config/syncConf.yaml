@@ -1,0 +1,9 @@
+table:
+ -
+  tbName: b_user_info
+  keys: fab_user
+  hasSpecial: false
+ -
+  tbName: b_channel_info
+  keys: chan_name
+  hasSpecial: true
