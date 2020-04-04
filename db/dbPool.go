@@ -25,7 +25,7 @@ func GetInstance() *DbPool {
 	return DbMan
 }
 
-var _host string = "192.168.110.153:3306"
+var _host string = "192.168.110.163:3306"
 var _database string = "bctest"
 var _username string = "root"
 var _password string = "Gmz_891019_ws"

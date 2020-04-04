@@ -41,7 +41,6 @@ func BuildRedisKey(tb string, key string, val map[string]interface{})(string,err
 
 func ToString(v interface{}) (string, error) {
 	switch v.(type) {
-
 	case string:
 		return v.(string), nil
 	case int:

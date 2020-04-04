@@ -97,7 +97,7 @@ func (p *RedisPool) GetHashInt(key string, field string) (int, error) {
 	return redis.Int(conn.Do("HGET", key, field))
 }
 
-func (p *RedisPool) AddtoSet(key string, vals ...string) (interface{}, error) {
+func (p *RedisPool) AddToSet(key string, vals ...string) (interface{}, error) {
 	conn := p.Pool.Get()
 	defer conn.Close()
 	l := []interface{}{key}
@@ -107,6 +107,18 @@ func (p *RedisPool) AddtoSet(key string, vals ...string) (interface{}, error) {
 	}
 	l = append(l, y...)
 	return conn.Do("SADD", l...)
+}
+
+func (p *RedisPool) RemoveFrmSet(key string, vals ...string) (interface{}, error) {
+	conn := p.Pool.Get()
+	defer conn.Close()
+	l := []interface{}{key}
+	y := make([]interface{}, len(vals))
+	for i, v := range vals {
+		y[i] = v
+	}
+	l = append(l, y...)
+	return conn.Do("SREM", l...)
 }
 
 func (p *RedisPool) GetSetMembers(key string) ([]interface{}, error) {

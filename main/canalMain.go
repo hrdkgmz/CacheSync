@@ -1,4 +1,4 @@
-package canal
+package main
 
 import (
 	"fmt"
@@ -54,7 +54,7 @@ func StartFetchEvent() {
 		batchId := message.Id
 		if batchId == -1 || len(message.Entries) <= 0 {
 			time.Sleep(300 * time.Millisecond)
-			fmt.Println("===没有数据了===")
+			//fmt.Println("===没有数据了===")
 			continue
 		}
 
@@ -100,7 +100,7 @@ func handleRows(rowChange *protocol.RowChange, header *protocol.Header) {
 			printColumn(rowData.GetAfterColumns())
 			taskHandler.Do(task.NewUpdateTask(rowData, header))
 		} else {
-			log.Println("不支持的事件类型：" + strconv.Itoa((int(eventType))))
+			log.Println("不支持的事件类型：" + strconv.Itoa(int(eventType)))
 		}
 	}
 

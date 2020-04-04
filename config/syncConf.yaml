@@ -1,9 +1,70 @@
-table:
+hash:
+ -
+  tbName: b_org_info
+  keys:
+   - org_name
+ -
+  tbName: b_peer_info
+  keys:
+   - peer_name
  -
   tbName: b_user_info
-  keys: fab_user
-  hasSpecial: false
+  keys:
+   - fab_user
+   - sys_user
+ -
+  tbName: b_orderer_info
+  keys:
+   - ord_name
  -
   tbName: b_channel_info
-  keys: chan_name
-  hasSpecial: true
+  keys:
+   - chan_name
+ -
+  tbName: b_cc_info
+  keys:
+   - cc_id
+ -
+  tbName: b_peer_cc
+  keys:
+   - peer_name&cc_id
+
+set:
+ -
+  tbName: b_peer_info
+  setType: 1
+  setName:
+   - org_peers
+  key:
+   - org_name
+  member:
+   - peer_name
+ -
+  tbName: b_channel_info
+  setType: 2
+  setName:
+   - chan_peers
+  key:
+   - chan_name
+  member:
+   - chan_peer
+ -
+  tbName: b_orderer_info
+  setType: 3
+  setName:
+   - orderers
+  key:
+  member:
+   - ord_name
+ -
+  tbName: b_peer_cc
+  setType: 4
+  setName:
+   - peer_ccs
+   - cc_peers
+  key:
+   - peer_name
+   - cc_id
+  member:
+   - cc_id
+   - peer_name

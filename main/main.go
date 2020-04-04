@@ -1,24 +1,30 @@
 package main
 
-import "github.com/hrdkgmz/cacheSync/global"
+import (
+	"fmt"
+	"github.com/hrdkgmz/cacheSync/cache"
+	"github.com/hrdkgmz/cacheSync/db"
+	"github.com/hrdkgmz/cacheSync/global"
+	"github.com/hrdkgmz/cacheSync/taskHandle"
+	"time"
+)
 
 func main() {
 
 	global.InitSyncInfos()
 
-	//db.GetInstance()
-	//cache.GetInstance()
-	//
-	//taskHandle.SetTaskPoolParam(10, 30*time.Second)
-	//taskHandler := taskHandle.GetInstance()
-	//
-	//
-	//startDulp(taskHandler)
-	//
-	//for{
-	//	time.Sleep(5 * time.Second)
-	//	fmt.Printf("等待任务中...")
-	//}
+	db.GetInstance()
+	cache.GetInstance()
+
+	taskHandle.SetTaskPoolParam(10, 30*time.Second)
+	taskHandler := taskHandle.GetInstance()
+
+	startRefresh(taskHandler)
+
+	for{
+		time.Sleep(5 * time.Second)
+		fmt.Printf("等待任务中...")
+	}
 
 
 

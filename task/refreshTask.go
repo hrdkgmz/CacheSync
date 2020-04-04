@@ -10,10 +10,10 @@ import (
 	"strings"
 )
 
-func NewDulpTask(tb string) taskHandle.TaskHandler {
+func NewRefreshTask(tb string) taskHandle.TaskHandler {
 	return func() error {
 		fmt.Println("执行数据库全量同步任务，表：" + tb)
-		info := global.GetSyncInfos()[tb]
+		info := global.GetHashInfos()[tb]
 		var keyString strings.Builder
 		for _, key := range info.Keys() {
 			keyString.WriteString(key + " ")
@@ -25,7 +25,7 @@ func NewDulpTask(tb string) taskHandle.TaskHandler {
 		if err != nil {
 			return err
 		}
-		err = cacheTable(tb, list, info.Keys(), info.HasSpecial())
+		err = cacheTable(tb, list, info.Keys())
 		if err != nil {
 			return err
 		}
@@ -33,7 +33,7 @@ func NewDulpTask(tb string) taskHandle.TaskHandler {
 	}
 }
 
-func cacheTable(tb string, list []map[string]interface{}, keys []string, hasSpecial bool) error {
+func cacheTable(tb string, list []map[string]interface{}, keys []string) error {
 	for _, val := range list {
 		for _, key := range keys {
 			rKey, err := util.BuildRedisKey(tb, key, val)
@@ -45,8 +45,8 @@ func cacheTable(tb string, list []map[string]interface{}, keys []string, hasSpec
 				return err
 			}
 		}
-		if hasSpecial {
-			err := global.DulpSpecialCase(tb, val)
+		if global.GetSetInfos()[tb]!=nil {
+			err := InsertSetMember(tb, val)
 			if err != nil {
 				return err
 			}
