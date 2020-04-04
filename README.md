@@ -1,0 +1,3 @@
+同步Mysql数据至Redis
+
+基于canal订阅Mysql binlog，数据表同步至Redis以Hash格式存储
