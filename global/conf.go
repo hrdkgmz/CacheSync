@@ -6,12 +6,41 @@ import (
 	"os"
 )
 
+type DbConf struct {
+	Host string
+	Database string
+	Username string
+	Password string
+	Charset string
+	MaxOpenConns int
+	MaxIdleConns int
+}
+
+type CacheConf struct {
+	Host string
+	Password string
+	Db int
+	MaxOpenConns int
+	MaxIdleConns int
+}
+
+type CanalConf struct {
+	IP string
+	Port int
+	Username string
+	Password string
+	Destination string
+	SoTimeOut int32
+	IdleTimeOut int32
+	Subscribe string
+}
+
 var (
 	confName   string = "conf"
 	confPath   string = "./config/"
-	dbConfig *dbConf
-	cacheConfig *cacheConf
-	canalConfig *canalConf
+	dbConfig *DbConf
+	cacheConfig *CacheConf
+	canalConfig *CanalConf
 )
 
 func InitConf() {
@@ -25,22 +54,22 @@ func InitConf() {
 		log.Error("配置文件加载失败")
 		os.Exit(1)
 	}
-	dbConfig=new(dbConf)
+	dbConfig=new(DbConf)
 	err= v.UnmarshalKey("mysql",dbConfig)
 	if err!=nil{
 		log.Error("数据库配置加载失败")
 		os.Exit(1)
 	}
 
-	cacheConfig=new(cacheConf)
+	cacheConfig=new(CacheConf)
 	err= v.UnmarshalKey("redis",cacheConfig)
 	if err!=nil{
 		log.Error("缓存配置加载失败")
 		os.Exit(1)
 	}
 
-	canalConfig=new(canalConf)
-	err= v.UnmarshalKey("redis",canalConfig)
+	canalConfig=new(CanalConf)
+	err= v.UnmarshalKey("canal",canalConfig)
 	if err!=nil{
 		log.Error("canal配置加载失败")
 		os.Exit(1)
@@ -48,14 +77,14 @@ func InitConf() {
 	log.Info("配置文件加载成功！")
 }
 
-func GetDbConf() *dbConf{
+func GetDbConf() *DbConf {
 	return dbConfig
 }
 
-func GetCacheConf() *cacheConf{
+func GetCacheConf() *CacheConf{
 	return cacheConfig
 }
 
-func GetCanalConf() *canalConf{
+func GetCanalConf() *CanalConf{
 	return canalConfig
 }

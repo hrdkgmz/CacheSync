@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69a9096f-14bc-4e28-b561-d2f1c63e4cb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/conf.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/log-config/debug.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/log-config/error.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/log-config/info.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global/cacheConf.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global/canalConf.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global/conf.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global/dbConf.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/default.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/hrdkgmz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/hrdkgmz.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/redisPool.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redisPool.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/syncConf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/syncMap.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/dbPool.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/dbPool.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global/syncConf.go" beforeDir="false" afterPath="$PROJECT_DIR$/global/syncMap.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/canalMain.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/canalMain.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/conf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/cacheConf.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/canalConf.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/global/conf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/dbConf.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/default.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/default.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/refreshMain.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/refreshMain.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/canalTask.go" beforeDir="false" afterPath="$PROJECT_DIR$/task/canalTask.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/refreshTask.go" beforeDir="false" afterPath="$PROJECT_DIR$/task/refreshTask.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskHandle/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/taskHandle/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,54 +124,55 @@
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1584686818070" />
     <state x="2606" y="212" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586245118709" />
-    <state width="1877" height="352" key="GridCell.Tab.0.bottom" timestamp="1586249550118">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="275" key="GridCell.Tab.0.bottom" timestamp="1586257079935">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="352" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586249550118" />
-    <state width="1493" height="347" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585965386308" />
-    <state width="1877" height="352" key="GridCell.Tab.0.center" timestamp="1586249550118">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586257079935" />
+    <state width="1493" height="275" key="GridCell.Tab.0.center" timestamp="1586257079934">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="352" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586249550118" />
-    <state width="1493" height="347" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585965386307" />
-    <state width="1877" height="352" key="GridCell.Tab.0.left" timestamp="1586249550118">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="275" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586257079934" />
+    <state width="1493" height="275" key="GridCell.Tab.0.left" timestamp="1586257079933">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="352" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586249550118" />
-    <state width="1493" height="347" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585965386307" />
-    <state width="1877" height="352" key="GridCell.Tab.0.right" timestamp="1586249550118">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="275" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586257079933" />
+    <state width="1493" height="275" key="GridCell.Tab.0.right" timestamp="1586257079935">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="352" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586249550118" />
-    <state width="1493" height="347" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585965386307" />
-    <state width="1877" height="458" key="GridCell.Tab.1.bottom" timestamp="1586249550116">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="275" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586257079935" />
+    <state width="1493" height="275" key="GridCell.Tab.1.bottom" timestamp="1586257079936">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="458" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586249550116" />
-    <state width="1493" height="347" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585965386308" />
-    <state width="1877" height="458" key="GridCell.Tab.1.center" timestamp="1586249550116">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="275" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586257079936" />
+    <state width="1493" height="275" key="GridCell.Tab.1.center" timestamp="1586257079936">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="458" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586249550116" />
-    <state width="1493" height="347" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585965386308" />
-    <state width="1877" height="458" key="GridCell.Tab.1.left" timestamp="1586249550116">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="275" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586257079936" />
+    <state width="1493" height="275" key="GridCell.Tab.1.left" timestamp="1586257079936">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="458" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586249550116" />
-    <state width="1493" height="347" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585965386308" />
-    <state width="1877" height="458" key="GridCell.Tab.1.right" timestamp="1586249550116">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="275" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586257079936" />
+    <state width="1493" height="275" key="GridCell.Tab.1.right" timestamp="1586257079936">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="458" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586249550116" />
-    <state width="1493" height="347" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585965386308" />
+    <state width="1493" height="275" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586257079936" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1585900660957">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585900660957" />
-    <state x="2431" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586224018922">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="409" y="203" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586256760928">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="2431" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586224018922" />
+    <state x="409" y="203" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1586256760928" />
     <state x="2442" y="154" width="647" height="801" key="find.popup" timestamp="1586229454987">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -222,10 +210,25 @@
           <line>214</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+        <line-breakpoint type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/main/refreshMain.go</url>
           <line>2</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/global/conf.go</url>
+          <line>76</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/global/conf.go</url>
+          <line>58</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/main/canalMain.go</url>
+          <line>27</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -238,6 +241,10 @@
         <watch expression="hashInfos" language="go" />
         <watch expression="setInfos" language="go" />
         <watch expression="*(*&quot;[]string&quot;)(824634599464)" />
+        <watch expression="dbConfig" language="go" />
+        <watch expression="cacheConfig" language="go" />
+        <watch expression="*(*&quot;github.com/hrdkgmz/cacheSync/global.cacheConf&quot;)(824634162432)" language="go" />
+        <watch expression="_ip" language="go" />
       </configuration>
     </watches-manager>
   </component>

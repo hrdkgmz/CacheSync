@@ -84,31 +84,31 @@ func initParams() {
 		os.Exit(1)
 	}
 
-	db.SetMysqlParas(dbConfig.Host(),
-		dbConfig.Database(),
-		dbConfig.Username(),
-		dbConfig.Password(),
-		dbConfig.Charset(),
-		dbConfig.MaxOpenConns(),
-		dbConfig.MaxIdleConns())
+	db.SetMysqlParas(dbConfig.Host,
+		dbConfig.Database,
+		dbConfig.Username,
+		dbConfig.Password,
+		dbConfig.Charset,
+		dbConfig.MaxOpenConns,
+		dbConfig.MaxIdleConns)
 
-	cache.SetRedisParas(cacheConfig.Host(),
-		cacheConfig.Password(),
-		cacheConfig.Db(),
-		cacheConfig.MaxOpenConns(),
-		cacheConfig.MaxIdleConns())
+	cache.SetRedisParas(cacheConfig.Host,
+		cacheConfig.Password,
+		cacheConfig.Db,
+		cacheConfig.MaxOpenConns,
+		cacheConfig.MaxIdleConns)
 
 	if canalConfig == nil {
 		fmt.Println("canal配置加载结果为空，无法启动监听binlog，但可执行全量同步任务")
 		return
 	}
-	SetCanalParameters(canalConfig.Ip(),
-		canalConfig.Port(),
-		canalConfig.Username(),
-		canalConfig.Password(),
-		canalConfig.Destination(),
-		canalConfig.SoTimeOut(),
-		canalConfig.IdleTimeOut())
+	SetCanalParameters(canalConfig.IP,
+		canalConfig.Port,
+		canalConfig.Username,
+		canalConfig.Password,
+		canalConfig.Destination,
+		canalConfig.SoTimeOut,
+		canalConfig.IdleTimeOut)
 }
 
 func loop() {
