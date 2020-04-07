@@ -1,27 +1,28 @@
 package global
 
 import (
-	"fmt"
 	log "github.com/cihub/seelog"
 	"github.com/spf13/viper"
+	"os"
 )
 
 var (
-	confName  string = "syncConf"
-	confPath  string = "./config/"
+	mapName   string = "syncMap"
+	mapPath   string = "./config/"
 	hashInfos map[string]*hashInfo
 	setInfos  map[string]*setInfo
 )
 
-func InitSyncInfos() {
+func InitSyncMap() {
 	v := viper.New()
-	v.SetConfigName(confName)
-	v.AddConfigPath(confPath)
+	v.SetConfigName(mapName)
+	v.AddConfigPath(mapPath)
 	v.SetConfigType("yaml")
 	err := v.ReadInConfig()
 
 	if err != nil {
 		log.Error("缓存数据同步规则加载失败")
+		os.Exit(1)
 	}
 	subV := v.Get("hash")
 	for _, tb := range subV.([]interface{}) {
@@ -65,7 +66,7 @@ func InitSyncInfos() {
 			setInfos[tbName] = sInfo
 		}
 	}
-	fmt.Println("缓存数据同步规则加载成功！")
+	log.Info("缓存数据同步规则加载成功！")
 }
 
 func GetHashInfos() map[string]*hashInfo {

@@ -31,7 +31,7 @@ func NewDeleteTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 			if err != nil {
 				return err
 			}
-			log.Info("已删除缓存数据，Key: " + rKey + " !")
+			log.Info("已删除缓存数据，Key: " + rKey)
 		}
 		if global.GetSetInfos()[tb] != nil {
 			err := DeleteSetMember(tb, colMap)
@@ -65,7 +65,7 @@ func NewInsertTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 			if err != nil {
 				return err
 			}
-			log.Info("已新增缓存数据，Key: " + rKey + " !")
+			log.Info("已新增缓存数据，Key: " + rKey )
 		}
 		if global.GetSetInfos()[tb] != nil {
 			err := InsertSetMember(tb, colMap)
@@ -97,7 +97,7 @@ func NewUpdateTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 			aColMap[c.GetName()] = c.GetValue()
 		}
 
-		log.Info("开始缓存数据，删除旧key数据，新增新key数据")
+		log.Info("开始更新缓存数据，删除旧key数据，新增新key数据")
 		err := NewDeleteTask(row, header)()
 		if err != nil {
 			return err

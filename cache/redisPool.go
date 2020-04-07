@@ -21,11 +21,12 @@ func GetInstance() *RedisPool {
 			log.Error("Redis连接池初始化失败", err.Error())
 			panic("Redis连接失败，程序退出")
 		}
+		log.Info("Redis连接成功！")
 	})
 	return RdsMan
 }
 
-var _host string = "192.168.110.163:6379"
+var _host string = "192.168.110.164:6379"
 var _pass string = ""
 var _db int = 0
 var _maxOpens int = 10032

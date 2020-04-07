@@ -3,7 +3,7 @@ package db
 import (
 	"database/sql"
 	"fmt"
-	_"github.com/cihub/seelog"
+	log "github.com/cihub/seelog"
 	"sync"
 )
 
@@ -18,14 +18,15 @@ func GetInstance() *DbPool {
 	once.Do(func() {
 		DbMan = NewDbPool()
 		if err := DbMan.Open(); err != nil {
-			fmt.Println("数据库连接池初始化失败", err.Error())
+			log.Error("数据库连接池初始化失败", err.Error())
 			panic("数据库连接失败，程序退出")
 		}
+		log.Info("数据库连接成功！")
 	})
 	return DbMan
 }
 
-var _host string = "192.168.110.163:3306"
+var _host string = "192.168.110.164:3306"
 var _database string = "bctest"
 var _username string = "root"
 var _password string = "Gmz_891019_ws"
@@ -62,7 +63,7 @@ type SQLConnPool struct {
 
 func initMySQLPool(host, database, user, password, charset string, maxOpenConns, maxIdleConns int) *SQLConnPool {
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=%s", user, password, host, database, charset)
-	fmt.Println(dataSourceName)
+	//fmt.Println(dataSourceName)
 	db := &SQLConnPool{
 		DriverName:     "mysql",
 		DataSourceName: dataSourceName,

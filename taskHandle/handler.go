@@ -1,7 +1,7 @@
 package taskHandle
 
 import (
-	"fmt"
+	log "github.com/cihub/seelog"
 	"strconv"
 	"sync"
 	"time"
@@ -17,7 +17,7 @@ var (
 func GetInstance() *WorkPool {
 	once.Do(func() {
 		TaskPool = NewPool(maxWorkers, timeOut)
-		fmt.Println("任务处理线程池创建成功，最大goroutine数量：" + strconv.Itoa(maxWorkers) +
+		log.Info("任务处理线程池创建成功，最大goroutine数量：" + strconv.Itoa(maxWorkers) +
 			", 任务超时时间：" + strconv.FormatFloat(timeOut.Seconds(), 'E', -1, 64) + "秒")
 	})
 	return TaskPool
