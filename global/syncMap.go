@@ -6,11 +6,34 @@ import (
 	"os"
 )
 
+
+type HashInfo struct {
+	TbName     string
+	Keys       []string
+}
+
+type SetInfo struct {
+	TbName  string
+	SetType SetType
+	SetName []string
+	Key     []string
+	Member  []string
+}
+
+type SetType int
+
+const (
+	SetType_SingleKeySingleMember SetType = 1
+	SetType_SingleKeyMultiMember  SetType = 2
+	SetType_SingleMember          SetType = 3
+	SetType_DoubleKeySingleMember SetType = 4
+)
+
 var (
 	mapName   string = "syncMap"
-	mapPath   string = "./config/"
-	hashInfos map[string]*hashInfo
-	setInfos  map[string]*setInfo
+	mapPath   string = "../config/"
+	HashInfos map[string]*HashInfo
+	SetInfos  map[string]*SetInfo
 )
 
 func InitSyncMap() {
@@ -32,11 +55,11 @@ func InitSyncMap() {
 			for _, v := range tbMap["keys"].([]interface{}) {
 				tbKeys = append(tbKeys, v.(string))
 			}
-			tbInfo := newHashInfo(tbName, tbKeys)
-			if hashInfos == nil {
-				hashInfos = make(map[string]*hashInfo)
+			tbInfo := HashInfo{tbName, tbKeys}
+			if HashInfos == nil {
+				HashInfos = make(map[string]*HashInfo)
 			}
-			hashInfos[tbName] = tbInfo
+			HashInfos[tbName] = &tbInfo
 		}
 	}
 	subVV := v.Get("set")
@@ -59,20 +82,20 @@ func InitSyncMap() {
 			for _, v := range tbMap["member"].([]interface{}) {
 				member = append(member, v.(string))
 			}
-			sInfo := newSetInfo(tbName, SetType(setType), setName, key, member)
-			if setInfos == nil {
-				setInfos = make(map[string]*setInfo)
+			sInfo := SetInfo{tbName, SetType(setType), setName, key, member}
+			if SetInfos == nil {
+				SetInfos = make(map[string]*SetInfo)
 			}
-			setInfos[tbName] = sInfo
+			SetInfos[tbName] = &sInfo
 		}
 	}
 	log.Info("缓存数据同步规则加载成功！")
 }
 
-func GetHashInfos() map[string]*hashInfo {
-	return hashInfos
+func GetHashInfos() map[string]*HashInfo {
+	return HashInfos
 }
 
-func GetSetInfos() map[string]*setInfo {
-	return setInfos
+func GetSetInfos() map[string]*SetInfo {
+	return SetInfos
 }

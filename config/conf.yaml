@@ -23,3 +23,7 @@ canal:
  soTimeOut: 60000
  idleTimeOut: 3600000
  subscribe: bctest\\..*
+
+taskpool:
+ maxThreads: 5
+ timeOut: 30

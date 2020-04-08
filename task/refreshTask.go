@@ -17,7 +17,7 @@ func NewRefreshTask(tb string, wg *sync.WaitGroup) taskHandle.TaskHandler {
 		log.Info("执行数据库全量同步任务，表：" + tb)
 		info := global.GetHashInfos()[tb]
 		var keyString strings.Builder
-		for _, key := range info.Keys() {
+		for _, key := range info.Keys {
 			keyString.WriteString(key + " ")
 		}
 		log.Debug(tb + ", 包含缓存key:" + keyString.String())
@@ -28,7 +28,7 @@ func NewRefreshTask(tb string, wg *sync.WaitGroup) taskHandle.TaskHandler {
 		if err != nil {
 			return err
 		}
-		err = cacheTable(tb, list, info.Keys())
+		err = cacheTable(tb, list, info.Keys)
 		if err != nil {
 			return err
 		}

@@ -35,12 +35,18 @@ type CanalConf struct {
 	Subscribe string
 }
 
+type TaskPoolConf struct {
+	MaxThreads int
+	TimeOut int
+}
+
 var (
-	confName   string = "conf"
-	confPath   string = "./config/"
-	dbConfig *DbConf
-	cacheConfig *CacheConf
-	canalConfig *CanalConf
+	confName    string = "conf"
+	confPath    string = "../config/"
+	DbConfig    *DbConf
+	CacheConfig *CacheConf
+	CanalConfig *CanalConf
+	TPoolConfig *TaskPoolConf
 )
 
 func InitConf() {
@@ -54,37 +60,32 @@ func InitConf() {
 		log.Error("配置文件加载失败")
 		os.Exit(1)
 	}
-	dbConfig=new(DbConf)
-	err= v.UnmarshalKey("mysql",dbConfig)
+	DbConfig=new(DbConf)
+	err= v.UnmarshalKey("mysql",DbConfig)
 	if err!=nil{
 		log.Error("数据库配置加载失败")
 		os.Exit(1)
 	}
 
-	cacheConfig=new(CacheConf)
-	err= v.UnmarshalKey("redis",cacheConfig)
+	CacheConfig =new(CacheConf)
+	err= v.UnmarshalKey("redis", CacheConfig)
 	if err!=nil{
 		log.Error("缓存配置加载失败")
 		os.Exit(1)
 	}
 
-	canalConfig=new(CanalConf)
-	err= v.UnmarshalKey("canal",canalConfig)
+	CanalConfig =new(CanalConf)
+	err= v.UnmarshalKey("canal", CanalConfig)
 	if err!=nil{
 		log.Error("canal配置加载失败")
 		os.Exit(1)
 	}
+
+	TPoolConfig =new(TaskPoolConf)
+	err= v.UnmarshalKey("taskpool", TPoolConfig)
+	if err!=nil{
+		log.Error("任务线程池配置加载失败")
+		os.Exit(1)
+	}
 	log.Info("配置文件加载成功！")
-}
-
-func GetDbConf() *DbConf {
-	return dbConfig
-}
-
-func GetCacheConf() *CacheConf{
-	return cacheConfig
-}
-
-func GetCanalConf() *CanalConf{
-	return canalConfig
 }

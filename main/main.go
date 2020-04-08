@@ -14,7 +14,7 @@ import (
 
 func main() {
 	defer log.Flush()
-	logger, err := log.LoggerFromConfigAsFile("./config/log-config/info.xml")
+	logger, err := log.LoggerFromConfigAsFile("../config/log-config/info.xml")
 	if err != nil {
 		fmt.Println("parse info.xml error:", err)
 		return
@@ -30,7 +30,6 @@ func main() {
 	cache.GetInstance() //连接缓存
 
 	//初始化任务队列与任务线程池
-	taskHandle.SetTaskPoolParam(10, 30*time.Second)
 	taskHandle.GetInstance()
 
 	time.Sleep(1 * time.Second)
@@ -50,7 +49,7 @@ Read:
 			startRefresh() //执行全量同步任务
 			fallthrough
 		case "2":
-			if global.GetCanalConf() == nil {
+			if global.CanalConfig == nil {
 				fmt.Println("canal配置异常，无法启动binlog监听...")
 				time.Sleep(5 * time.Second)
 				os.Exit(1)
@@ -67,14 +66,15 @@ Read:
 			continue
 		}
 	}
-	loop()
+	loop() //死循环，保持线程
 
 }
 
 func initParams() {
-	dbConfig := global.GetDbConf()
-	cacheConfig := global.GetCacheConf()
-	canalConfig := global.GetCanalConf()
+	dbConfig := global.DbConfig
+	cacheConfig := global.CacheConfig
+	canalConfig := global.CanalConfig
+	poolConfig := global.TPoolConfig
 	if dbConfig == nil {
 		fmt.Println("数据库配置加载结果为空")
 		os.Exit(1)
@@ -98,6 +98,11 @@ func initParams() {
 		cacheConfig.MaxOpenConns,
 		cacheConfig.MaxIdleConns)
 
+	if poolConfig != nil {
+		taskHandle.SetTaskPoolParam(poolConfig.MaxThreads,
+			time.Duration(poolConfig.TimeOut)*time.Second)
+	}
+
 	if canalConfig == nil {
 		fmt.Println("canal配置加载结果为空，无法启动监听binlog，但可执行全量同步任务")
 		return
@@ -108,7 +113,8 @@ func initParams() {
 		canalConfig.Password,
 		canalConfig.Destination,
 		canalConfig.SoTimeOut,
-		canalConfig.IdleTimeOut)
+		canalConfig.IdleTimeOut,
+		canalConfig.Subscribe)
 }
 
 func loop() {
@@ -121,7 +127,7 @@ func loop() {
 			continue
 		}
 		if command == "info" {
-			logger, err := log.LoggerFromConfigAsFile("./config/log-config/info.xml")
+			logger, err := log.LoggerFromConfigAsFile("../config/log-config/info.xml")
 			if err != nil {
 				fmt.Println("parse info.xml error:", err)
 				continue
@@ -129,7 +135,7 @@ func loop() {
 			log.ReplaceLogger(logger)
 			fmt.Println("启动info日志模式")
 		} else if command == "debug" {
-			logger, err := log.LoggerFromConfigAsFile("./config/log-config/debug.xml")
+			logger, err := log.LoggerFromConfigAsFile("../config/log-config/debug.xml")
 			if err != nil {
 				fmt.Println("parse debug.xml error:", err)
 				continue
@@ -137,7 +143,7 @@ func loop() {
 			log.ReplaceLogger(logger)
 			fmt.Println("启动debug日志模式")
 		} else if command == "error" {
-			logger, err := log.LoggerFromConfigAsFile("./config/log-config/error.xml")
+			logger, err := log.LoggerFromConfigAsFile("../config/log-config/error.xml")
 			if err != nil {
 				fmt.Println("parse error.xml error:", err)
 				continue

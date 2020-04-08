@@ -10,7 +10,7 @@ import (
 var (
 	once       sync.Once
 	TaskPool   *WorkPool
-	maxWorkers int           = 50
+	maxWorkers int           = 5
 	timeOut    time.Duration = 30 * time.Second
 )
 
