@@ -260,3 +260,41 @@
 2020-04-08 13:46:38 [INF] dbPool.go:25 | 数据库连接成功！
 2020-04-08 13:46:38 [INF] redisPool.go:25 | Redis连接成功！
 2020-04-08 13:46:38 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-04-09 16:32:21 [INF] conf.go:91 | 配置文件加载成功！
+2020-04-09 16:32:21 [INF] syncMap.go:93 | 缓存数据同步规则加载成功！
+2020-04-09 16:32:21 [INF] dbPool.go:25 | 数据库连接成功！
+2020-04-09 16:32:21 [INF] redisPool.go:25 | Redis连接成功！
+2020-04-09 16:32:21 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-04-09 16:32:24 [INF] canalMain.go:45 | Canal连接成功，开始监听binlog...
+2020-04-09 16:32:31 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000001 : 6363],name[bctest,b_user_info], eventType: DELETE
+2020-04-09 16:32:31 [INF] canalMain.go:106 | id : 14  update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | fab_user : Steve  update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | fab_pass :   update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | user_lv :   update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | org_name : Apple  update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | sys_user : Jobs  update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | reg_time : 2020-04-09 15:08:13  update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | enroll_time : 2020-04-09 15:08:16  update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | exp_date :   update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | affil :   update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | attr :   update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | is_valid :   update= false
+2020-04-09 16:32:31 [INF] canalMain.go:106 | remarks :   update= false
+2020-04-09 16:32:31 [INF] canalTask.go:25 | 已删除缓存数据，Key: b_user_info:fab_user:Steve
+2020-04-09 16:32:31 [INF] canalTask.go:25 | 已删除缓存数据，Key: b_user_info:sys_user:Jobs
+2020-04-09 16:32:57 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000001 : 6689],name[bctest,b_user_info], eventType: INSERT
+2020-04-09 16:32:57 [INF] canalMain.go:106 | id : 15  update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | fab_user : Steve  update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | fab_pass :   update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | user_lv :   update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | org_name : Apple  update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | sys_user : Jobs  update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | reg_time : 2020-04-09 16:32:48  update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | enroll_time : 2020-04-09 16:32:51  update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | exp_date : 2020-04-09 16:32:54  update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | affil :   update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | attr :   update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | is_valid :   update= true
+2020-04-09 16:32:57 [INF] canalMain.go:106 | remarks :   update= true
+2020-04-09 16:32:57 [INF] canalTask.go:59 | 已新增缓存数据，Key: b_user_info:fab_user:Steve
+2020-04-09 16:32:57 [INF] canalTask.go:59 | 已新增缓存数据，Key: b_user_info:sys_user:Jobs

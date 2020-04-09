@@ -1,28 +1,28 @@
 mysql:
- host: 192.168.110.165:3306
+ host: 172.28.62.228:3306
  database: bctest
  username: root
- password: Gmz_891019_ws
+ password: root
  charset: utf8
  maxOpenConns: 2000
  maxIdleConns: 1000
 
 redis:
- host: 192.168.110.165:6379
+ host: 172.28.62.228:6379
  password:
  db: 0
  maxOpenConns: 10032
  maxIdleConns: 300
 
 canal:
- ip: 192.168.110.165
+ ip: 172.28.62.228
  port: 11111
  username:
  password:
  destination: example
  soTimeOut: 60000
  idleTimeOut: 3600000
- subscribe: bctest\\..*
+ schema: bctest
 
 taskpool:
  maxThreads: 5

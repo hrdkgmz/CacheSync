@@ -22,7 +22,7 @@ var (
 	_destination string = "example"
 	_soTimeOut   int32  = 60000
 	_idleTimeOut int32  = 60 * 60 * 1000
-	_subscribe string = "bctest\\..*"
+	_subscribe   string = "bctest\\..*"
 )
 
 func StartFetchEvent() {
@@ -108,12 +108,12 @@ func printColumn(columns []*protocol.Column) {
 	}
 }
 
-func SetCanalParameters(ip string, port int, user string, pass string, dest string, soTime int32, idleTime int32, subscribe string) {
+func SetCanalParameters(ip string, port int, user string, pass string, dest string, soTime int32, idleTime int32, schema string) {
 	_ip = ip
 	_port = port
 	_password = pass
 	_destination = dest
 	_soTimeOut = soTime
 	_idleTimeOut = idleTime
-	_subscribe=subscribe
+	_subscribe = schema + "\\..*"
 }

@@ -114,7 +114,7 @@ func initParams() {
 		canalConfig.Destination,
 		canalConfig.SoTimeOut,
 		canalConfig.IdleTimeOut,
-		canalConfig.Subscribe)
+		canalConfig.Schema)
 }
 
 func loop() {

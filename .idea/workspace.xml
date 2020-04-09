@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69a9096f-14bc-4e28-b561-d2f1c63e4cb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main/log/default.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/conf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/log-config/debug.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/log-config/debug.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/log-config/error.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/log-config/error.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/log-config/info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/log-config/info.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/global/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/global/conf.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global/hashInfo.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/global/setInfo.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/global/syncMap.go" beforeDir="false" afterPath="$PROJECT_DIR$/global/syncMap.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/default.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/default.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/canalMain.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/canalMain.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/canalTask.go" beforeDir="false" afterPath="$PROJECT_DIR$/task/canalTask.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/refreshTask.go" beforeDir="false" afterPath="$PROJECT_DIR$/task/refreshTask.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskHandle/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/taskHandle/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -32,7 +32,7 @@ type CanalConf struct {
 	Destination string
 	SoTimeOut int32
 	IdleTimeOut int32
-	Subscribe string
+	Schema string
 }
 
 type TaskPoolConf struct {
