@@ -118,148 +118,152 @@ func NewUpdateTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 }
 
 func DeleteSetMember(tb string, val map[string]interface{}) error {
-	setInfo := global.GetSetInfos()[tb]
-	switch setInfo.SetType {
-	case global.SetType_SingleKeySingleMember:
-		mem, err := util.ToString(val[setInfo.Member[0]])
-		if err != nil {
-			return err
-		}
-		key, err := util.ToString(val[setInfo.Key[0]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().RemoveFrmSet(setInfo.SetName[0]+":"+key, mem)
-		if err != nil {
-			return err
-		}
-		return nil
-
-	case global.SetType_SingleKeyMultiMember:
-		key, err := util.ToString(val[setInfo.Key[0]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().DelKey(setInfo.SetName[0] + ":" + key)
-		if err != nil {
-			return err
-		}
-		return nil
-	case global.SetType_SingleMember:
-		mem, err := util.ToString(val[setInfo.Member[0]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().RemoveFrmSet(setInfo.SetName[0], mem)
-		if err != nil {
-			return err
-		}
-		return nil
-	case global.SetType_DoubleKeySingleMember:
-		key1, err := util.ToString(val[setInfo.Key[0]])
-		if err != nil {
-			return err
-		}
-		mem1, err := util.ToString(val[setInfo.Member[0]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().RemoveFrmSet(setInfo.SetName[0]+":"+key1, mem1)
-		if err != nil {
-			return err
-		}
-		key2, err := util.ToString(val[setInfo.Key[1]])
-		if err != nil {
-			return err
-		}
-		mem2, err := util.ToString(val[setInfo.Member[1]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().RemoveFrmSet(setInfo.SetName[1]+":"+key2, mem2)
-		if err != nil {
-			return err
-		}
-		return nil
-	default:
-		return nil
-	}
-}
-
-func InsertSetMember(tb string, val map[string]interface{}) error {
-	setInfo := global.GetSetInfos()[tb]
-	switch setInfo.SetType {
-	case global.SetType_SingleKeySingleMember:
-		mem, err := util.ToString(val[setInfo.Member[0]])
-		if err != nil {
-			return err
-		}
-		key, err := util.ToString(val[setInfo.Key[0]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key, mem)
-		if err != nil {
-			return err
-		}
-		return nil
-
-	case global.SetType_SingleKeyMultiMember:
-		mem, err := util.ToString(val[setInfo.Member[0]])
-		if err != nil {
-			return err
-		}
-		mems := strings.Split(mem, ";")
-		key, err := util.ToString(val[setInfo.Key[0]])
-		if err != nil {
-			return err
-		}
-		for _, p := range mems {
-			_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key, p)
+	setInfos := global.GetSetInfos()[tb]
+	for _, setInfo := range setInfos {
+		switch setInfo.SetType {
+		case global.SetType_SingleKeySingleMember:
+			mem, err := util.ToString(val[setInfo.Member[0]])
 			if err != nil {
 				return err
 			}
+			key, err := util.ToString(val[setInfo.Key[0]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().RemoveFrmSet(setInfo.SetName[0]+":"+key, mem)
+			if err != nil {
+				return err
+			}
+
+		case global.SetType_SingleKeyMultiMember:
+			key, err := util.ToString(val[setInfo.Key[0]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().DelKey(setInfo.SetName[0] + ":" + key)
+			if err != nil {
+				return err
+			}
+
+		case global.SetType_SingleMember:
+			mem, err := util.ToString(val[setInfo.Member[0]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().RemoveFrmSet(setInfo.SetName[0], mem)
+			if err != nil {
+				return err
+			}
+
+		case global.SetType_DoubleKeySingleMember:
+			key1, err := util.ToString(val[setInfo.Key[0]])
+			if err != nil {
+				return err
+			}
+			mem1, err := util.ToString(val[setInfo.Member[0]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().RemoveFrmSet(setInfo.SetName[0]+":"+key1, mem1)
+			if err != nil {
+				return err
+			}
+			key2, err := util.ToString(val[setInfo.Key[1]])
+			if err != nil {
+				return err
+			}
+			mem2, err := util.ToString(val[setInfo.Member[1]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().RemoveFrmSet(setInfo.SetName[1]+":"+key2, mem2)
+			if err != nil {
+				return err
+			}
+
+		default:
+			return nil
 		}
-		return nil
-	case global.SetType_SingleMember:
-		mem, err := util.ToString(val[setInfo.Member[0]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().AddToSet(setInfo.SetName[0], mem)
-		if err != nil {
-			return err
-		}
-		return nil
-	case global.SetType_DoubleKeySingleMember:
-		key1, err := util.ToString(val[setInfo.Key[0]])
-		if err != nil {
-			return err
-		}
-		mem1, err := util.ToString(val[setInfo.Member[0]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key1, mem1)
-		if err != nil {
-			return err
-		}
-		key2, err := util.ToString(val[setInfo.Key[1]])
-		if err != nil {
-			return err
-		}
-		mem2, err := util.ToString(val[setInfo.Member[1]])
-		if err != nil {
-			return err
-		}
-		_, err = cache.GetInstance().AddToSet(setInfo.SetName[1]+":"+key2, mem2)
-		if err != nil {
-			return err
-		}
-		return nil
-	default:
-		return nil
 	}
+	return nil
+}
+
+func InsertSetMember(tb string, val map[string]interface{}) error {
+	setInfos := global.GetSetInfos()[tb]
+	for _, setInfo := range setInfos {
+		switch setInfo.SetType {
+		case global.SetType_SingleKeySingleMember:
+			mem, err := util.ToString(val[setInfo.Member[0]])
+			if err != nil {
+				return err
+			}
+			key, err := util.ToString(val[setInfo.Key[0]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key, mem)
+			if err != nil {
+				return err
+			}
+
+		case global.SetType_SingleKeyMultiMember:
+			mem, err := util.ToString(val[setInfo.Member[0]])
+			if err != nil {
+				return err
+			}
+			mems := strings.Split(mem, ";")
+			key, err := util.ToString(val[setInfo.Key[0]])
+			if err != nil {
+				return err
+			}
+			for _, p := range mems {
+				_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key, p)
+				if err != nil {
+					return err
+				}
+			}
+
+		case global.SetType_SingleMember:
+			mem, err := util.ToString(val[setInfo.Member[0]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().AddToSet(setInfo.SetName[0], mem)
+			if err != nil {
+				return err
+			}
+
+		case global.SetType_DoubleKeySingleMember:
+			key1, err := util.ToString(val[setInfo.Key[0]])
+			if err != nil {
+				return err
+			}
+			mem1, err := util.ToString(val[setInfo.Member[0]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key1, mem1)
+			if err != nil {
+				return err
+			}
+			key2, err := util.ToString(val[setInfo.Key[1]])
+			if err != nil {
+				return err
+			}
+			mem2, err := util.ToString(val[setInfo.Member[1]])
+			if err != nil {
+				return err
+			}
+			_, err = cache.GetInstance().AddToSet(setInfo.SetName[1]+":"+key2, mem2)
+			if err != nil {
+				return err
+			}
+
+		default:
+			return nil
+		}
+	}
+	return nil
 }
 
 func UpdateSetMember(tb string, oldVal map[string]interface{}, newVal map[string]interface{}) error {

@@ -6,10 +6,9 @@ import (
 	"os"
 )
 
-
 type HashInfo struct {
-	TbName     string
-	Keys       []string
+	TbName string
+	Keys   []string
 }
 
 type SetInfo struct {
@@ -33,7 +32,7 @@ var (
 	mapName   string = "syncMap"
 	mapPath   string = "../config/"
 	HashInfos map[string]*HashInfo
-	SetInfos  map[string]*SetInfo
+	SetInfos  map[string][]*SetInfo
 )
 
 func InitSyncMap() {
@@ -84,9 +83,12 @@ func InitSyncMap() {
 			}
 			sInfo := SetInfo{tbName, SetType(setType), setName, key, member}
 			if SetInfos == nil {
-				SetInfos = make(map[string]*SetInfo)
+				SetInfos = make(map[string][]*SetInfo)
 			}
-			SetInfos[tbName] = &sInfo
+			if SetInfos[tbName] == nil {
+				SetInfos[tbName] = make([]*SetInfo, 0)
+			}
+			SetInfos[tbName] = append(SetInfos[tbName], &sInfo)
 		}
 	}
 	log.Info("缓存数据同步规则加载成功！")
@@ -96,6 +98,6 @@ func GetHashInfos() map[string]*HashInfo {
 	return HashInfos
 }
 
-func GetSetInfos() map[string]*SetInfo {
+func GetSetInfos() map[string][]*SetInfo {
 	return SetInfos
 }

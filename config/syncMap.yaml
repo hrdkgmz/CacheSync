@@ -28,6 +28,18 @@ hash:
   tbName: b_peer_cc
   keys:
    - peer_name&cc_id
+ - 
+  tbName: l_blk_data
+  keys:
+   - blk_no
+ - 
+  tbName: l_tx_data
+  keys:
+   - tx_id
+ - 
+  tbName: l_channel_data
+  keys:
+   - chan_name
 
 set:
  -
@@ -56,6 +68,22 @@ set:
   key:
   member:
    - ord_name
+ -
+  tbName: b_channel_info
+  setType: 3
+  setName:
+   - channels
+  key:
+  member:
+   - chan_name
+ -
+  tbName: b_cc_info
+  setType: 3
+  setName:
+   - ccs
+  key:
+  member:
+   - cc_id
  -
   tbName: b_peer_cc
   setType: 4
