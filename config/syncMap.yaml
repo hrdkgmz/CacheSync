@@ -3,31 +3,48 @@ hash:
   tbName: b_org_info
   keys:
    - org_name
+  setString: true
  -
   tbName: b_peer_info
   keys:
-   - peer_name
+   - peer_fullname
+  setString: true
  -
   tbName: b_user_info
   keys:
    - fab_user
    - sys_user
+  setString: true
  -
   tbName: b_orderer_info
   keys:
    - ord_name
+  setString: true
  -
   tbName: b_channel_info
   keys:
    - chan_name
+  setString: true
  -
   tbName: b_cc_info
   keys:
    - cc_id
+  setString: true
  -
-  tbName: b_peer_cc
+  tbName: s_peer_cc
   keys:
-   - peer_name&cc_id
+   - peer_fullname&cc_id
+  setString: true
+ -
+  tbName: s_channel_cc
+  keys:
+   - chan_name&cc_id
+  setString: true
+ -
+  tbName: s_channel_peer
+  keys:
+   - chan_name&peer_fullname
+  setString: true
  - 
   tbName: l_blk_data
   keys:
@@ -50,16 +67,16 @@ set:
   key:
    - org_name
   member:
-   - peer_name
+   - peer_fullname
  -
-  tbName: b_channel_info
-  setType: 2
+  tbName: s_channel_peer
+  setType: 1
   setName:
    - chan_peers
   key:
    - chan_name
   member:
-   - chan_peer
+   - peer_fullname
  -
   tbName: b_orderer_info
   setType: 3
@@ -85,14 +102,26 @@ set:
   member:
    - cc_id
  -
-  tbName: b_peer_cc
+  tbName: s_peer_cc
   setType: 4
   setName:
    - peer_ccs
    - cc_peers
   key:
-   - peer_name
+   - peer_fullname
    - cc_id
   member:
    - cc_id
-   - peer_name
+   - peer_fullname
+ -
+  tbName: s_channel_cc
+  setType: 4
+  setName:
+   - chan_ccs
+   - cc_chans
+  key:
+   - chan_name
+   - cc_id
+  member:
+   - cc_id
+   - chan_name

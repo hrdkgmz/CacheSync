@@ -1,11 +1,12 @@
 package task
 
 import (
-	cProtocol "github.com/CanalClient/canal-go/protocol"
+	cProtocol "github.com/withlin/canal-go/protocol"
 	log "github.com/cihub/seelog"
-	"github.com/hrdkgmz/cacheSync/cache"
+	"github.com/hrdkgmz/dbWrapper/cache"
 	"github.com/hrdkgmz/cacheSync/global"
 	"github.com/hrdkgmz/cacheSync/util"
+	"strconv"
 	"strings"
 )
 
@@ -20,10 +21,10 @@ func NewDeleteTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 		cols := row.GetBeforeColumns()
 		colMap := make(map[string]interface{})
 		for _, c := range cols {
-			colMap[c.GetName()] = c.GetValue()
+			colMap[c.GetName()] = getDataByDbType(c.GetValue(),c.MysqlType)
 		}
 		for _, key := range tbInfo.Keys {
-			rKey, err := util.BuildRedisKey(tb, key, colMap)
+			rKey, err := util.BuildHashKey(tb, key, colMap)
 			if err != nil {
 				return err
 			}
@@ -32,6 +33,17 @@ func NewDeleteTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 				return err
 			}
 			log.Info("已删除缓存数据，Key: " + rKey)
+			if tbInfo.SetString {
+				rKey, err = util.BuildStringKey(tb, key, colMap)
+				if err != nil {
+					return err
+				}
+				_, err = cache.GetInstance().DelKey(rKey)
+				if err != nil {
+					return err
+				}
+				log.Info("已删除缓存数据，Key: " + rKey)
+			}
 		}
 		if global.GetSetInfos()[tb] != nil {
 			err := DeleteSetMember(tb, colMap)
@@ -54,10 +66,10 @@ func NewInsertTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 		cols := row.GetAfterColumns()
 		colMap := make(map[string]interface{})
 		for _, c := range cols {
-			colMap[c.GetName()] = c.GetValue()
+			colMap[c.GetName()] = getDataByDbType(c.GetValue(),c.MysqlType)
 		}
 		for _, key := range tbInfo.Keys {
-			rKey, err := util.BuildRedisKey(tb, key, colMap)
+			rKey, err := util.BuildHashKey(tb, key, colMap)
 			if err != nil {
 				return err
 			}
@@ -66,6 +78,21 @@ func NewInsertTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 				return err
 			}
 			log.Info("已新增缓存数据，Key: " + rKey)
+			if tbInfo.SetString {
+				rKey, err = util.BuildStringKey(tb, key, colMap)
+				if err != nil {
+					return err
+				}
+				jsonStr, err := util.EncodeJSON(colMap)
+				if err != nil {
+					return err
+				}
+				_, err = cache.GetInstance().SetString(rKey, jsonStr)
+				if err != nil {
+					return err
+				}
+				log.Info("已新增缓存数据，Key: " + rKey)
+			}
 		}
 		if global.GetSetInfos()[tb] != nil {
 			err := InsertSetMember(tb, colMap)
@@ -89,12 +116,12 @@ func NewUpdateTask(row *cProtocol.RowData, header *cProtocol.Header) func() erro
 		beforeCols := row.GetBeforeColumns()
 		bColMap := make(map[string]interface{})
 		for _, c := range beforeCols {
-			bColMap[c.GetName()] = c.GetValue()
+			bColMap[c.GetName()] = getDataByDbType(c.GetValue(),c.MysqlType)
 		}
 		afterCols := row.GetAfterColumns()
 		aColMap := make(map[string]interface{})
 		for _, c := range afterCols {
-			aColMap[c.GetName()] = c.GetValue()
+			aColMap[c.GetName()] = getDataByDbType(c.GetValue(),c.MysqlType)
 		}
 
 		log.Info("开始更新缓存数据，删除旧key数据，新增新key数据")
@@ -201,7 +228,7 @@ func InsertSetMember(tb string, val map[string]interface{}) error {
 			if err != nil {
 				return err
 			}
-			_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key, mem)
+			_, err = cache.GetInstance().AddtoSet(setInfo.SetName[0]+":"+key, mem)
 			if err != nil {
 				return err
 			}
@@ -217,7 +244,7 @@ func InsertSetMember(tb string, val map[string]interface{}) error {
 				return err
 			}
 			for _, p := range mems {
-				_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key, p)
+				_, err = cache.GetInstance().AddtoSet(setInfo.SetName[0]+":"+key, p)
 				if err != nil {
 					return err
 				}
@@ -228,7 +255,7 @@ func InsertSetMember(tb string, val map[string]interface{}) error {
 			if err != nil {
 				return err
 			}
-			_, err = cache.GetInstance().AddToSet(setInfo.SetName[0], mem)
+			_, err = cache.GetInstance().AddtoSet(setInfo.SetName[0], mem)
 			if err != nil {
 				return err
 			}
@@ -242,7 +269,7 @@ func InsertSetMember(tb string, val map[string]interface{}) error {
 			if err != nil {
 				return err
 			}
-			_, err = cache.GetInstance().AddToSet(setInfo.SetName[0]+":"+key1, mem1)
+			_, err = cache.GetInstance().AddtoSet(setInfo.SetName[0]+":"+key1, mem1)
 			if err != nil {
 				return err
 			}
@@ -254,7 +281,7 @@ func InsertSetMember(tb string, val map[string]interface{}) error {
 			if err != nil {
 				return err
 			}
-			_, err = cache.GetInstance().AddToSet(setInfo.SetName[1]+":"+key2, mem2)
+			_, err = cache.GetInstance().AddtoSet(setInfo.SetName[1]+":"+key2, mem2)
 			if err != nil {
 				return err
 			}
@@ -276,4 +303,42 @@ func UpdateSetMember(tb string, oldVal map[string]interface{}, newVal map[string
 		return err
 	}
 	return nil
+}
+
+func getDataByDbType(val string, dbType string) interface{} {
+	var result interface{}
+	if strings.HasPrefix(dbType, "int") ||
+		strings.HasPrefix(dbType, "bit") ||
+		strings.HasPrefix(dbType, "tinyint") ||
+		strings.HasPrefix(dbType, "smallint") {
+		result, _ = strconv.ParseInt(val, 10, 64)
+	} else if strings.HasPrefix(dbType, "bigint") {
+		result, _ = strconv.ParseUint(val, 10, 64)
+	} else if strings.HasPrefix(val, "char") ||
+		strings.HasPrefix(dbType, "varchar") ||
+		strings.HasPrefix(dbType, "tinytext") ||
+		strings.HasPrefix(dbType, "text") ||
+		strings.HasPrefix(dbType, "mediumtext") ||
+		strings.HasPrefix(dbType, "longtext") ||
+		strings.HasPrefix(dbType, "tinyblob") ||
+		strings.HasPrefix(dbType, "mediumblob") ||
+		strings.HasPrefix(dbType, "blob") ||
+		strings.HasPrefix(dbType, "longblob") ||
+		strings.HasPrefix(dbType, "json") ||
+		strings.HasPrefix(dbType, "enum") ||
+		strings.HasPrefix(dbType, "set") ||
+		strings.HasPrefix(dbType, "year") ||
+		strings.HasPrefix(dbType, "date") ||
+		strings.HasPrefix(dbType, "time") ||
+		strings.HasPrefix(dbType, "timestamp") ||
+		strings.HasPrefix(dbType, "datetime") {
+		result = val
+	} else if strings.HasPrefix(dbType, "float") ||
+		strings.HasPrefix(dbType, "double") ||
+		strings.HasPrefix(dbType, "decimal") {
+		result, _ = strconv.ParseFloat(val, 64)
+	} else {
+		result = nil
+	}
+	return result
 }

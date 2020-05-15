@@ -9,6 +9,7 @@ import (
 type HashInfo struct {
 	TbName string
 	Keys   []string
+	SetString bool
 }
 
 type SetInfo struct {
@@ -54,7 +55,11 @@ func InitSyncMap() {
 			for _, v := range tbMap["keys"].([]interface{}) {
 				tbKeys = append(tbKeys, v.(string))
 			}
-			tbInfo := HashInfo{tbName, tbKeys}
+			isSetString := false
+			if tbMap["setString"]!=nil{
+				isSetString = tbMap["setString"].(bool)
+			}
+			tbInfo := HashInfo{tbName, tbKeys, isSetString}
 			if HashInfos == nil {
 				HashInfos = make(map[string]*HashInfo)
 			}

@@ -375,3 +375,636 @@
 2020-05-06 14:54:03 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
 2020-05-06 14:54:03 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成
 2020-05-06 14:54:03 [INF] canalMain.go:45 | Canal连接成功，开始监听binlog...
+2020-05-12 11:00:59 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:02:48 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:02:48 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:02:48 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:02:48 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:02:48 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:04:07 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_cc
+2020-05-12 11:04:07 [INF] refreshTask.go:44 | b_peer_cc, 数据开始写入缓存...
+2020-05-12 11:04:07 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成
+2020-05-12 11:04:07 [INF] canalMain.go:45 | Canal连接成功，开始监听binlog...
+2020-05-12 11:07:08 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 684],name[bctest,b_user_info], eventType: INSERT
+2020-05-12 11:07:08 [INF] canalMain.go:106 | id : 17  update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | fab_user : Genius  update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | fab_pass : Stupid  update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | user_lv :   update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | org_name : Microsoft  update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | sys_user : Gates  update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:06:59  update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:07:02  update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | exp_date :   update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | affil :   update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | attr :   update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | is_valid :   update= true
+2020-05-12 11:07:08 [INF] canalMain.go:106 | remarks :   update= true
+2020-05-12 11:07:08 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-12 11:07:08 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-12 11:07:08 [INF] canalTask.go:70 | 已新增缓存数据，Key: b_user_info:string:fab_user:
+2020-05-12 11:07:08 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-12 11:07:08 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-12 11:07:08 [INF] canalTask.go:70 | 已新增缓存数据，Key: b_user_info:string:sys_user:
+2020-05-12 11:13:10 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:13:10 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:13:10 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:13:10 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:13:10 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:13:46 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:13:46 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:13:46 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:13:46 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:13:46 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:13:53 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-12 11:13:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_cc
+2020-05-12 11:13:53 [INF] refreshTask.go:44 | b_peer_cc, 数据开始写入缓存...
+2020-05-12 11:14:33 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成
+2020-05-12 11:15:52 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:15:52 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:15:52 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:15:52 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:15:52 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:15:56 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-12 11:15:56 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-12 11:15:56 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-12 11:15:56 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-12 11:15:56 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-12 11:15:56 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-12 11:15:56 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-12 11:15:56 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-12 11:15:56 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-12 11:15:56 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-12 11:15:56 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-12 11:15:56 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_cc
+2020-05-12 11:15:56 [INF] refreshTask.go:44 | b_peer_cc, 数据开始写入缓存...
+2020-05-12 11:16:02 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-12 11:16:02 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-12 11:16:02 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-12 11:16:02 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-12 11:16:02 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-12 11:16:02 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-12 11:16:02 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-12 11:16:02 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-12 11:16:02 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成
+2020-05-12 11:16:02 [INF] canalMain.go:43 | Canal连接成功，开始监听binlog...
+2020-05-12 11:16:38 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 1860],name[bctest,b_user_info], eventType: INSERT
+2020-05-12 11:16:38 [INF] canalMain.go:107 | id : 19  update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | fab_user : Bill  update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | fab_pass : assdsd  update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | user_lv :   update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | org_name : Micro  update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | sys_user : Gates  update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | reg_time : 2020-05-12 11:16:34  update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | enroll_time : 2020-05-12 11:16:36  update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | exp_date :   update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | affil :   update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | attr :   update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | is_valid :   update= true
+2020-05-12 11:16:38 [INF] canalMain.go:107 | remarks :   update= true
+2020-05-12 11:16:53 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-12 11:20:17 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:20:17 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:20:17 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:20:17 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:20:17 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:20:40 [INF] canalMain.go:43 | Canal连接成功，开始监听binlog...
+2020-05-12 11:21:54 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:21:54 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:21:54 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:21:54 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:21:54 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:22:01 [INF] canalMain.go:43 | Canal连接成功，开始监听binlog...
+2020-05-12 11:22:01 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 2866],name[bctest,b_user_info], eventType: DELETE
+2020-05-12 11:22:01 [INF] canalMain.go:107 | id : 19  update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | fab_user : Bill  update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | fab_pass : assdsd  update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | user_lv :   update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | org_name : Micro  update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | sys_user : Gates  update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | reg_time : 2020-05-12 11:16:34  update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | enroll_time : 2020-05-12 11:16:36  update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | exp_date :   update= false
+2020-05-12 11:22:01 [INF] canalMain.go:107 | affil :   update= false
+2020-05-12 11:23:17 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:23:17 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:23:17 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:23:17 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:23:17 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:23:21 [INF] canalMain.go:43 | Canal连接成功，开始监听binlog...
+2020-05-12 11:23:41 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 3532],name[bctest,b_user_info], eventType: INSERT
+2020-05-12 11:23:41 [INF] canalMain.go:107 | id : 22  update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | fab_user : sadasd  update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | fab_pass : sadsadsa  update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | user_lv :   update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | org_name : assdsad  update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | sys_user : dasdasdsa  update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | reg_time : 2020-05-12 11:23:37  update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | enroll_time : 2020-05-12 11:23:39  update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | exp_date :   update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | affil :   update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | attr :   update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | is_valid :   update= true
+2020-05-12 11:23:41 [INF] canalMain.go:107 | remarks :   update= true
+2020-05-12 11:24:18 [INF] canalTask.go:93 | 已新增缓存数据，Key: b_user_info:string:fab_user:sadasd
+2020-05-12 11:24:18 [INF] canalTask.go:93 | 已新增缓存数据，Key: b_user_info:string:sys_user:dasdasdsa
+2020-05-12 11:24:58 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 3876],name[bctest,b_user_info], eventType: DELETE
+2020-05-12 11:24:58 [INF] canalMain.go:107 | id : 22  update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | fab_user : sadasd  update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | fab_pass : sadsadsa  update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | user_lv :   update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | org_name : assdsad  update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | sys_user : dasdasdsa  update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | reg_time : 2020-05-12 11:23:37  update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | enroll_time : 2020-05-12 11:23:39  update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | exp_date :   update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | affil :   update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | attr :   update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | is_valid :   update= false
+2020-05-12 11:24:58 [INF] canalMain.go:107 | remarks :   update= false
+2020-05-12 11:27:56 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 4220],name[bctest,b_user_info], eventType: INSERT
+2020-05-12 11:27:56 [INF] canalMain.go:107 | id : 23  update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | fab_user : fdghfhtr  update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | fab_pass : ghgfhgfh  update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | user_lv :   update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | org_name : gfhgfhf  update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | sys_user : hgfhgfh  update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | reg_time : 2020-05-12 11:27:54  update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | enroll_time :   update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | exp_date :   update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | affil :   update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | attr :   update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | is_valid :   update= true
+2020-05-12 11:27:56 [INF] canalMain.go:107 | remarks :   update= true
+2020-05-12 11:28:42 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 4559],name[bctest,b_user_info], eventType: DELETE
+2020-05-12 11:28:42 [INF] canalMain.go:107 | id : 23  update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | fab_user : fdghfhtr  update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | fab_pass : ghgfhgfh  update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | user_lv :   update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | org_name : gfhgfhf  update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | sys_user : hgfhgfh  update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | reg_time : 2020-05-12 11:27:54  update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | enroll_time :   update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | exp_date :   update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | affil :   update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | attr :   update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | is_valid :   update= false
+2020-05-12 11:28:42 [INF] canalMain.go:107 | remarks :   update= false
+2020-05-12 11:29:14 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:29:14 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:29:14 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:29:14 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:29:14 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:29:17 [INF] canalMain.go:45 | Canal连接成功，开始监听binlog...
+2020-05-12 11:29:35 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 4898],name[bctest,b_user_info], eventType: INSERT
+2020-05-12 11:29:35 [INF] canalMain.go:106 | id : 24  update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | fab_user : ddfdsf  update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | fab_pass :   update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | user_lv :   update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | org_name : sdfdsf  update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | sys_user : fdsfsdf  update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:29:29  update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:29:32  update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | exp_date :   update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | affil :   update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | attr :   update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | is_valid :   update= true
+2020-05-12 11:29:35 [INF] canalMain.go:106 | remarks :   update= true
+2020-05-12 11:29:35 [INF] canalTask.go:70 | 已新增缓存数据，Key: b_user_info:string:fab_user:ddfdsf
+2020-05-12 11:29:35 [INF] canalTask.go:70 | 已新增缓存数据，Key: b_user_info:string:sys_user:fdsfsdf
+2020-05-12 11:29:48 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 5229],name[bctest,b_user_info], eventType: DELETE
+2020-05-12 11:29:48 [INF] canalMain.go:106 | id : 24  update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | fab_user : ddfdsf  update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | fab_pass :   update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | user_lv :   update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | org_name : sdfdsf  update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | sys_user : fdsfsdf  update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:29:29  update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:29:32  update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | exp_date :   update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | affil :   update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | attr :   update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | is_valid :   update= false
+2020-05-12 11:29:48 [INF] canalMain.go:106 | remarks :   update= false
+2020-05-12 11:29:48 [INF] canalTask.go:26 | 已删除缓存数据，Key: b_user_info:string:fab_user:ddfdsf
+2020-05-12 11:29:48 [INF] canalTask.go:26 | 已删除缓存数据，Key: b_user_info:string:sys_user:fdsfsdf
+2020-05-12 11:30:31 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 5560],name[bctest,b_user_info], eventType: INSERT
+2020-05-12 11:30:31 [INF] canalMain.go:106 | id : 25  update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | fab_user : dfafd  update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | fab_pass : adsfdsf  update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | user_lv :   update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | org_name : asdfdsaf  update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | sys_user : dsfsf  update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:30:28  update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:30:30  update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | exp_date :   update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | affil :   update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | attr :   update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | is_valid :   update= true
+2020-05-12 11:30:31 [INF] canalMain.go:106 | remarks :   update= true
+2020-05-12 11:30:31 [INF] canalTask.go:70 | 已新增缓存数据，Key: b_user_info:string:fab_user:dfafd
+2020-05-12 11:30:31 [INF] canalTask.go:70 | 已新增缓存数据，Key: b_user_info:string:sys_user:dsfsf
+2020-05-12 11:30:38 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 5899],name[bctest,b_user_info], eventType: UPDATE
+2020-05-12 11:30:38 [INF] canalMain.go:94 | -------> before
+2020-05-12 11:30:38 [INF] canalMain.go:106 | id : 25  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | fab_user : dfafd  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | fab_pass : adsfdsf  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | user_lv :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | org_name : asdfdsaf  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | sys_user : dsfsf  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:30:28  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:30:30  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | exp_date :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | affil :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | attr :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | is_valid :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | remarks :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:96 | -------> after
+2020-05-12 11:30:38 [INF] canalMain.go:106 | id : 25  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | fab_user : dfafd  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | fab_pass : dsafrew  update= true
+2020-05-12 11:30:38 [INF] canalMain.go:106 | user_lv :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | org_name : asdfdsaf  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | sys_user : dsfsf  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:30:28  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:30:30  update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | exp_date :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | affil :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | attr :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | is_valid :   update= false
+2020-05-12 11:30:38 [INF] canalMain.go:106 | remarks :   update= false
+2020-05-12 11:30:38 [INF] canalTask.go:126 | 开始更新缓存数据，删除旧key数据，新增新key数据
+2020-05-12 11:30:38 [INF] canalTask.go:26 | 已删除缓存数据，Key: b_user_info:string:fab_user:dfafd
+2020-05-12 11:30:38 [INF] canalTask.go:26 | 已删除缓存数据，Key: b_user_info:string:sys_user:dsfsf
+2020-05-12 11:30:38 [INF] canalTask.go:70 | 已新增缓存数据，Key: b_user_info:string:fab_user:dfafd
+2020-05-12 11:30:38 [INF] canalTask.go:70 | 已新增缓存数据，Key: b_user_info:string:sys_user:dsfsf
+2020-05-12 11:32:50 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 6287],name[bctest,b_user_info], eventType: DELETE
+2020-05-12 11:32:50 [INF] canalMain.go:106 | id : 25  update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | fab_user : dfafd  update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | fab_pass : dsafrew  update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | user_lv :   update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | org_name : asdfdsaf  update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | sys_user : dsfsf  update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:30:28  update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:30:30  update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | exp_date :   update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | affil :   update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | attr :   update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | is_valid :   update= false
+2020-05-12 11:32:50 [INF] canalMain.go:106 | remarks :   update= false
+2020-05-12 11:32:50 [INF] canalTask.go:26 | 已删除缓存数据，Key: b_user_info:string:fab_user:dfafd
+2020-05-12 11:32:50 [INF] canalTask.go:26 | 已删除缓存数据，Key: b_user_info:string:sys_user:dsfsf
+2020-05-12 11:34:18 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:34:18 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:34:18 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:34:18 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:34:18 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:34:22 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_cc
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | b_peer_cc, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-12 11:34:22 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-12 11:34:22 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成
+2020-05-12 11:34:22 [INF] canalMain.go:45 | Canal连接成功，开始监听binlog...
+2020-05-12 11:34:49 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 6626],name[bctest,b_user_info], eventType: INSERT
+2020-05-12 11:34:49 [INF] canalMain.go:106 | id : 26  update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | fab_user : Bill  update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | fab_pass : dsds  update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | user_lv :   update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | org_name : Micro  update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | sys_user : Gates  update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:34:45  update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:34:46  update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | exp_date :   update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | affil :   update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | attr :   update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | is_valid :   update= true
+2020-05-12 11:34:49 [INF] canalMain.go:106 | remarks :   update= true
+2020-05-12 11:34:49 [INF] canalTask.go:95 | 已新增缓存数据，Key: b_user_info:string:fab_user:Bill
+2020-05-12 11:34:49 [INF] canalTask.go:71 | 已新增缓存数据，Key: b_user_info:string:fab_user:Bill
+2020-05-12 11:34:49 [INF] canalTask.go:95 | 已新增缓存数据，Key: b_user_info:string:sys_user:Gates
+2020-05-12 11:34:49 [INF] canalTask.go:71 | 已新增缓存数据，Key: b_user_info:string:sys_user:Gates
+2020-05-12 11:35:53 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 6958],name[bctest,b_user_info], eventType: UPDATE
+2020-05-12 11:35:53 [INF] canalMain.go:94 | -------> before
+2020-05-12 11:35:53 [INF] canalMain.go:106 | id : 26  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | fab_user : Bill  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | fab_pass : dsds  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | user_lv :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | org_name : Micro  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | sys_user : Gates  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:34:45  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:34:46  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | exp_date :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | affil :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | attr :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | is_valid :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | remarks :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:96 | -------> after
+2020-05-12 11:35:53 [INF] canalMain.go:106 | id : 26  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | fab_user : Bill  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | fab_pass : dsds  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | user_lv :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | org_name : Micro  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | sys_user : Dreams  update= true
+2020-05-12 11:35:53 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:34:45  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:34:46  update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | exp_date :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | affil :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | attr :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | is_valid :   update= false
+2020-05-12 11:35:53 [INF] canalMain.go:106 | remarks :   update= false
+2020-05-12 11:35:53 [INF] canalTask.go:128 | 开始更新缓存数据，删除旧key数据，新增新key数据
+2020-05-12 11:35:53 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:hash:fab_user:Bill
+2020-05-12 11:35:53 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:string:fab_user:Bill
+2020-05-12 11:35:53 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:hash:sys_user:Gates
+2020-05-12 11:35:53 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:string:sys_user:Gates
+2020-05-12 11:35:53 [INF] canalTask.go:95 | 已新增缓存数据，Key: b_user_info:string:fab_user:Bill
+2020-05-12 11:35:53 [INF] canalTask.go:71 | 已新增缓存数据，Key: b_user_info:string:fab_user:Bill
+2020-05-12 11:35:53 [INF] canalTask.go:95 | 已新增缓存数据，Key: b_user_info:string:sys_user:Dreams
+2020-05-12 11:35:53 [INF] canalTask.go:71 | 已新增缓存数据，Key: b_user_info:string:sys_user:Dreams
+2020-05-12 11:36:34 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 7333],name[bctest,b_user_info], eventType: DELETE
+2020-05-12 11:36:34 [INF] canalMain.go:106 | id : 26  update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | fab_user : Bill  update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | fab_pass : dsds  update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | user_lv :   update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | org_name : Micro  update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | sys_user : Dreams  update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:34:45  update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:34:46  update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | exp_date :   update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | affil :   update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | attr :   update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | is_valid :   update= false
+2020-05-12 11:36:34 [INF] canalMain.go:106 | remarks :   update= false
+2020-05-12 11:36:34 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:hash:fab_user:Bill
+2020-05-12 11:36:34 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:string:fab_user:Bill
+2020-05-12 11:36:34 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:hash:sys_user:Dreams
+2020-05-12 11:36:34 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:string:sys_user:Dreams
+2020-05-12 11:37:37 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-12 11:37:37 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-12 11:37:37 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-12 11:37:37 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-12 11:37:37 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-12 11:37:40 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_cc
+2020-05-12 11:37:40 [INF] refreshTask.go:44 | b_peer_cc, 数据开始写入缓存...
+2020-05-12 11:37:40 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成
+2020-05-12 11:37:40 [INF] canalMain.go:45 | Canal连接成功，开始监听binlog...
+2020-05-12 11:38:12 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 7666],name[bctest,b_user_info], eventType: INSERT
+2020-05-12 11:38:12 [INF] canalMain.go:106 | id : 27  update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | fab_user : Bill  update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | fab_pass :   update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | user_lv :   update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | org_name : dsdsd  update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | sys_user : Gates  update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:38:08  update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:38:10  update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | exp_date :   update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | affil :   update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | attr :   update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | is_valid :   update= true
+2020-05-12 11:38:12 [INF] canalMain.go:106 | remarks :   update= true
+2020-05-12 11:38:13 [INF] canalTask.go:81 | 已新增缓存数据，Key: b_user_info:hash:fab_user:Bill
+2020-05-12 11:38:13 [INF] canalTask.go:81 | 已新增缓存数据，Key: b_user_info:string:fab_user:Bill
+2020-05-12 11:38:13 [INF] canalTask.go:81 | 已新增缓存数据，Key: b_user_info:hash:sys_user:Gates
+2020-05-12 11:38:13 [INF] canalTask.go:81 | 已新增缓存数据，Key: b_user_info:string:sys_user:Gates
+2020-05-12 11:38:46 [INF] canalMain.go:84 | ================> binlog[mysql-bin.000007 : 7992],name[bctest,b_user_info], eventType: DELETE
+2020-05-12 11:38:46 [INF] canalMain.go:106 | id : 27  update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | fab_user : Bill  update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | fab_pass :   update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | user_lv :   update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | org_name : dsdsd  update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | sys_user : Gates  update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | reg_time : 2020-05-12 11:38:08  update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | enroll_time : 2020-05-12 11:38:10  update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | exp_date :   update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | affil :   update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | attr :   update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | is_valid :   update= false
+2020-05-12 11:38:46 [INF] canalMain.go:106 | remarks :   update= false
+2020-05-12 11:38:46 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:hash:fab_user:Bill
+2020-05-12 11:38:46 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:string:fab_user:Bill
+2020-05-12 11:38:46 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:hash:sys_user:Gates
+2020-05-12 11:38:46 [INF] canalTask.go:36 | 已删除缓存数据，Key: b_user_info:string:sys_user:Gates
+2020-05-15 11:04:10 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-15 11:04:10 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-15 11:04:10 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-15 11:04:10 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-15 11:04:10 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-15 11:08:11 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-15 11:08:11 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-15 11:08:11 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-15 11:08:11 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-15 11:08:11 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-15 11:08:14 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_peer_cc
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | s_peer_cc, 数据开始写入缓存...
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-15 11:08:14 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-15 11:08:14 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:08:14 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-15 11:08:14 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:08:14 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-15 11:08:14 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:08:15 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成
+2020-05-15 11:16:50 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-15 11:16:50 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-15 11:16:50 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-15 11:16:50 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-15 11:16:50 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-15 11:16:53 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_peer_cc
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | s_peer_cc, 数据开始写入缓存...
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-15 11:16:53 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-15 11:16:53 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-15 11:16:53 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_channel_cc
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | s_channel_cc, 数据开始写入缓存...
+2020-05-15 11:16:53 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_channel_peer
+2020-05-15 11:16:53 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | s_channel_peer, 数据开始写入缓存...
+2020-05-15 11:16:53 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-15 11:20:50 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-15 11:20:50 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-15 11:20:50 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-15 11:20:50 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-15 11:20:50 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-15 11:20:52 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_peer_cc
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_channel_cc
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | s_peer_cc, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | s_channel_cc, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_channel_peer
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | s_channel_peer, 数据开始写入缓存...
+2020-05-15 11:20:52 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-15 11:20:52 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-15 11:20:52 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-15 11:20:52 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-15 11:20:52 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:20:52 [ERR] util.go:108 | 无法处理的数据类型
+2020-05-15 11:20:52 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成
+2020-05-15 11:22:17 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-15 11:22:17 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-15 11:22:17 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-15 11:22:17 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-15 11:22:17 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-15 11:22:28 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-15 11:22:28 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-15 11:22:28 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-15 11:22:28 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-15 11:22:28 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-15 11:22:28 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_peer_cc
+2020-05-15 11:22:28 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-15 11:22:28 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-15 11:22:28 [INF] refreshTask.go:44 | s_peer_cc, 数据开始写入缓存...
+2020-05-15 11:22:28 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-15 11:22:28 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-15 11:23:53 [INF] conf.go:91 | 配置文件加载成功！
+2020-05-15 11:23:53 [INF] syncMap.go:100 | 缓存数据同步规则加载成功！
+2020-05-15 11:23:53 [INF] dbPool.go:25 | 数据库连接成功！
+2020-05-15 11:23:53 [INF] redisPool.go:25 | Redis连接成功！
+2020-05-15 11:23:53 [INF] handler.go:22 | 任务处理线程池创建成功，最大goroutine数量：5, 任务超时时间：3E+01秒
+2020-05-15 11:23:55 [INF] refreshMain.go:14 | 开始分发数据库全量同步任务...
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_tx_data
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_user_info
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_channel_peer
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_org_info
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_channel_cc
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | l_tx_data, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | b_org_info, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | s_channel_peer, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | b_user_info, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | s_channel_cc, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_channel_data
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_peer_info
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | l_channel_data, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | b_peer_info, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_orderer_info
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | b_orderer_info, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_channel_info
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | b_channel_info, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：b_cc_info
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | b_cc_info, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：s_peer_cc
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | s_peer_cc, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshTask.go:18 | 执行数据库全量同步任务，表：l_blk_data
+2020-05-15 11:23:55 [INF] refreshTask.go:44 | l_blk_data, 数据开始写入缓存...
+2020-05-15 11:23:55 [INF] refreshMain.go:21 | 数据库全量数据同步任务已全部完成

@@ -2,8 +2,8 @@ package task
 
 import (
 	log "github.com/cihub/seelog"
-	"github.com/hrdkgmz/cacheSync/cache"
-	"github.com/hrdkgmz/cacheSync/db"
+	"github.com/hrdkgmz/dbWrapper/cache"
+	"github.com/hrdkgmz/dbWrapper/db"
 	"github.com/hrdkgmz/cacheSync/global"
 	"github.com/hrdkgmz/cacheSync/taskHandle"
 	"github.com/hrdkgmz/cacheSync/util"
@@ -28,7 +28,7 @@ func NewRefreshTask(tb string, wg *sync.WaitGroup) taskHandle.TaskHandler {
 		if err != nil {
 			return err
 		}
-		err = cacheTable(tb, list, info.Keys)
+		err = cacheTable(tb, list, info)
 		if err != nil {
 			return err
 		}
@@ -39,17 +39,31 @@ func NewRefreshTask(tb string, wg *sync.WaitGroup) taskHandle.TaskHandler {
 	}
 }
 
-func cacheTable(tb string, list []map[string]interface{}, keys []string) error {
+func cacheTable(tb string, list []map[string]interface{}, info *global.HashInfo) error {
 	log.Info(tb + ", 数据开始写入缓存...")
 	for _, val := range list {
-		for _, key := range keys {
-			rKey, err := util.BuildRedisKey(tb, key, val)
+		for _, key := range info.Keys {
+			rKey, err := util.BuildHashKey(tb, key, val)
 			if err != nil {
 				return err
 			}
 			_, err = cache.GetInstance().SetHashMap(rKey, val)
 			if err != nil {
 				return err
+			}
+			if info.SetString {
+				rKey, err := util.BuildStringKey(tb, key, val)
+				if err != nil {
+					return err
+				}
+				jsonStr, err := util.EncodeJSON(val)
+				if err != nil {
+					return err
+				}
+				_, err = cache.GetInstance().SetString(rKey, jsonStr)
+				if err != nil {
+					return err
+				}
 			}
 			log.Debug(rKey + ", 数据写入成功！")
 		}
