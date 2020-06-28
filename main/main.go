@@ -4,10 +4,11 @@ import (
 	"bufio"
 	"fmt"
 	log "github.com/cihub/seelog"
-	"github.com/hrdkgmz/dbWrapper/cache"
-	"github.com/hrdkgmz/dbWrapper/db"
 	"github.com/hrdkgmz/cacheSync/global"
 	"github.com/hrdkgmz/cacheSync/taskHandle"
+	"github.com/hrdkgmz/dbWrapper/cache"
+	"github.com/hrdkgmz/dbWrapper/db"
+	"github.com/hrdkgmz/dbWrapper/dmdb"
 	"os"
 	"time"
 )
@@ -26,7 +27,15 @@ func main() {
 
 	initParams() //配置参数加载
 
-	db.GetInstance()    //连接数据库
+	switch global.DbType { //连接数据库
+	case global.DbType_Mysql:
+		db.GetInstance()
+	case global.DbType_DM:
+		dmdb.GetInstance()
+	default:
+		log.Error("无法识别的数据库类型，dbtype:", global.DbType)
+		os.Exit(1)
+	}
 	cache.GetInstance() //连接缓存
 
 	//初始化任务队列与任务线程池
@@ -71,26 +80,40 @@ Read:
 }
 
 func initParams() {
+	dmdbConfig := global.DmDbConfig
 	dbConfig := global.DbConfig
 	cacheConfig := global.CacheConfig
 	canalConfig := global.CanalConfig
 	poolConfig := global.TPoolConfig
-	if dbConfig == nil {
-		fmt.Println("数据库配置加载结果为空")
-		os.Exit(1)
+	switch global.DbType {
+	case global.DbType_Mysql:
+		if dbConfig == nil {
+			fmt.Println("MySql数据库配置加载结果为空")
+			os.Exit(1)
+		}
+		db.SetMysqlParas(dbConfig.Host,
+			dbConfig.Database,
+			dbConfig.Username,
+			dbConfig.Password,
+			dbConfig.Charset,
+			dbConfig.MaxOpenConns,
+			dbConfig.MaxIdleConns)
+	case global.DbType_DM:
+		if dmdbConfig == nil {
+			fmt.Println("达梦数据库配置加载结果为空")
+			os.Exit(1)
+		}
+		dmdb.SetMysqlParas(dmdbConfig.Host,
+			dmdbConfig.Username,
+			dmdbConfig.Password,
+			dmdbConfig.MaxOpenConns,
+			dmdbConfig.MaxIdleConns)
 	}
+
 	if cacheConfig == nil {
 		fmt.Println("缓存配置加载结果为空")
 		os.Exit(1)
 	}
-
-	db.SetMysqlParas(dbConfig.Host,
-		dbConfig.Database,
-		dbConfig.Username,
-		dbConfig.Password,
-		dbConfig.Charset,
-		dbConfig.MaxOpenConns,
-		dbConfig.MaxIdleConns)
 
 	cache.SetRedisParas(cacheConfig.Host,
 		cacheConfig.Password,

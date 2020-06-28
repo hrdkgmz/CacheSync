@@ -1,3 +1,19 @@
+################程序配置#################
+
+#数据库类型： 1-MySql 2-达梦
+dbType: 2
+
+################连接配置#################
+
+#达梦数据库连接配置  (若dbType未选择达梦则此部分可省略)
+dm:
+ host: 172.28.62.30:5236
+ username: SYSDBA
+ password: SYSDBA
+ maxOpenConns: 2000
+ maxIdleConns: 1000
+
+#MySql数据库连接配置  (若dbType未选择MySql则此部分可省略)
 mysql:
  host: 172.28.62.228:3306
  database: bctest
@@ -7,6 +23,7 @@ mysql:
  maxOpenConns: 2000
  maxIdleConns: 1000
 
+#Redis连接配置
 redis:
  host: 172.28.62.228:6379
  password:
@@ -14,6 +31,7 @@ redis:
  maxOpenConns: 10032
  maxIdleConns: 300
 
+#Canal连接配置
 canal:
  ip: 172.28.62.228
  port: 11111
@@ -24,6 +42,7 @@ canal:
  idleTimeOut: 3600000
  schema: bctest
 
+#任务协程池配置
 taskpool:
  maxThreads: 5
  timeOut: 30

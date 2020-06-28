@@ -29,6 +29,7 @@ hash:
   tbName: b_cc_info
   keys:
    - cc_id
+   - cc_name&cc_ver
   setString: true
  -
   tbName: s_peer_cc
@@ -70,13 +71,16 @@ set:
    - peer_fullname
  -
   tbName: s_channel_peer
-  setType: 1
+  setType: 4
   setName:
    - chan_peers
+   - peer_chans
   key:
    - chan_name
+   - peer_fullname
   member:
    - peer_fullname
+   - chan_name
  -
   tbName: b_orderer_info
   setType: 3
@@ -102,6 +106,23 @@ set:
   member:
    - cc_id
  -
+  tbName: b_cc_info
+  setType: 3
+  setName:
+   - ccnames
+  key:
+  member:
+   - cc_name
+ -
+  tbName: b_cc_info
+  setType: 1
+  setName:
+   - ccname_vers
+  key:
+   - cc_name
+  member:
+   - cc_ver
+ -
   tbName: s_peer_cc
   setType: 4
   setName:
@@ -125,3 +146,12 @@ set:
   member:
    - cc_id
    - chan_name
+ -
+  tbName: b_user_info
+  setType: 1
+  setName:
+   - org_sysusers
+  key:
+   - org_name
+  member:
+   - sys_user

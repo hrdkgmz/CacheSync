@@ -1,11 +1,11 @@
 package task
 
 import (
-	cProtocol "github.com/withlin/canal-go/protocol"
 	log "github.com/cihub/seelog"
-	"github.com/hrdkgmz/dbWrapper/cache"
 	"github.com/hrdkgmz/cacheSync/global"
 	"github.com/hrdkgmz/cacheSync/util"
+	"github.com/hrdkgmz/dbWrapper/cache"
+	cProtocol "github.com/withlin/canal-go/protocol"
 	"strconv"
 	"strings"
 )

@@ -4,6 +4,7 @@ import (
 	log "github.com/cihub/seelog"
 	"github.com/hrdkgmz/dbWrapper/cache"
 	"github.com/hrdkgmz/dbWrapper/db"
+	"github.com/hrdkgmz/dbWrapper/dmdb"
 	"github.com/hrdkgmz/cacheSync/global"
 	"github.com/hrdkgmz/cacheSync/taskHandle"
 	"github.com/hrdkgmz/cacheSync/util"
@@ -21,9 +22,17 @@ func NewRefreshTask(tb string, wg *sync.WaitGroup) taskHandle.TaskHandler {
 			keyString.WriteString(key + " ")
 		}
 		log.Debug(tb + ", 包含缓存key:" + keyString.String())
-		mysql := db.GetInstance()
+
 		sqlStr := "select * from " + tb
-		list, err := mysql.Query(sqlStr)
+
+		var list []map[string]interface{}
+		var err error
+		switch global.DbType {
+		case global.DbType_Mysql:
+			list, err = db.GetInstance().Query(sqlStr)
+		case global.DbType_DM:
+			list, err = dmdb.GetInstance().Query(sqlStr)
+		}
 		log.Debug(tb + ", 数据查询成功，记录条数为:：" + strconv.Itoa(len(list)))
 		if err != nil {
 			return err
